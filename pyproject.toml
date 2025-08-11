@@ -15,6 +15,7 @@ dependencies = [
     "numpy",
     "typer",
     "joblib",
+    "scikit-learn",
 ]
 
 [tool.setuptools.packages.find]
