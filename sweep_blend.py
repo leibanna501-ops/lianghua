@@ -22,7 +22,8 @@ def main(cfg_path: str):
 
     # ========= 1) 融合参数 sweep =========
     print("Running blend sweep…")
-    grid = list(itertools.product([False, True], [0.0, 0.1, 0.2, 0.3, 0.4]))
+    w_range = [round(i * 0.05, 2) for i in range(21)]
+    grid = list(itertools.product([False, True], w_range))
     results = []
     for invert_sup, w_unsup in grid:
         c = deepcopy(base)
