@@ -1,0 +1,29 @@
+data:
+  symbol: "000001"   # ← 去掉 .SZ/.SH
+  start: "2023-01-01"
+  end: "2025-08-11"
+  fetcher: "akshare"
+feature:
+  names: ["ma_converge"]
+  params:
+    ma_converge:
+      ma_short: 20
+      ma_long: 60
+label:
+  name: "weak_label_v1"
+  params:
+    horizon: 5
+    threshold: 0.03
+model:
+  calibrator: "legacy_platt_isotonic"
+  params: {}
+blend:
+  name: regime_gate_oscillator
+  params:
+    invert_sup: true
+    w_unsup: 0.4
+run:
+  cache_dir: ".cache"
+  out_dir: "outputs"
+  seed: 42
+  fp32: true

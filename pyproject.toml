@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "acs-refactor"
+version = "0.1.0"
+description = "Refactor skeleton for ACS"
+authors = [{name="you"}]
+requires-python = ">=3.9"
+dependencies = [
+    "pydantic>=2.5",
+    "pyyaml",
+    "pandas",
+    "numpy",
+    "typer",
+    "joblib",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
